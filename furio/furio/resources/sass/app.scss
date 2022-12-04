@@ -1,0 +1,56 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+$font-family-base: 'Montserrat', sans-serif;
+$headings-font-family: 'Furio';
+$primary: #e77725;
+$secondary: #6c757d;
+$success: #198754;
+$danger: #dc3545;
+$warning: #ffc107;
+$info: #0dcaf0;
+$light: #efefef;
+$dark: #0e1f2f;
+$card-color: #292929;
+$modal-backdrop-bg: $dark;
+$modal-backdrop-opacity: 0.9;
+$modal-content-color: $dark;
+$modal-content-bg: $light;
+$nav-tabs-link-active-bg: $light;
+$nav-link-hover-color: $light;
+$nav-link-color: $info;
+.footer .nav-link {
+    color: $light;
+}
+.footer .nav-link i {
+    color: $primary;
+    padding-right: 5px;
+}
+.footer .social .nav-link {
+    font-size: 1.75em;
+    padding: .25rem;
+}
+.footer .social .nav-link i {
+    color: $info;
+}
+.footer .social .nav-link i:hover {
+    color: $primary;
+}
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/regular";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+@import "~@fortawesome/fontawesome-free/scss/brands";
+[v-cloak] > * { display: none; }
+body {
+    background-image: url("/images/background.jpg");
+    background-position: center 0px;
+    background-repeat: no-repeat;
+}
+@font-face{
+    font-family:"Furio";
+    src: url("../fonts/furio.woff") format("woff");
+    font-weight:normal;
+    font-style:normal;
+}

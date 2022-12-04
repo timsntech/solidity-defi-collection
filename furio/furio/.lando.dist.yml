@@ -1,0 +1,39 @@
+name: furio
+recipe: laravel
+config:
+  php: '8.0'
+  webroot: ./public/
+  via: nginx
+  database: mysql:8.0
+  cache: redis
+services:
+  appserver:
+    build_as_root:
+      - curl -sL https://deb.nodesource.com/setup_16.x | bash -
+      - apt-get install -y nodejs libgmp-dev re2c libmhash-dev libmcrypt-dev file
+      - ln -s /usr/include/x86_64-linux-gnu/gmp.h /usr/local/include/
+      - docker-php-ext-install gmp
+    overrides:
+      environment:
+        APP_ENV: local
+        DB_HOST: database
+        DB_PORT: 3306
+        DB_DATABASE: laravel
+        DB_USERNAME: laravel
+        DB_PASSWORD: laravel
+        REDIS_HOST: cache
+        REDIS_PASSWORD: null
+        REDIS_PORT: 6379
+  database:
+    run_as_root:
+      - "mysql -uroot -e \"CREATE DATABASE IF NOT EXISTS testing; GRANT ALL PRIVILEGES ON testing.* TO 'laravel'@'%';\""
+tooling:
+  phpunit:
+    service: appserver
+    cmd: vendor/bin/phpunit
+  node:
+    service: appserver
+  npm:
+    service: appserver
+  npx:
+    service: appserver

@@ -1,0 +1,30 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "npm run development",
+        "development": "mix",
+        "watch": "mix watch",
+        "watch-poll": "mix watch -- --watch-options-poll=1000",
+        "hot": "mix watch --hot",
+        "prod": "npm run production",
+        "production": "mix --production",
+        "build-contracts": "sol-merger \"./contracts/*.sol\" ./build"
+    },
+    "devDependencies": {
+        "@nomiclabs/hardhat-ethers": "^2.0.5",
+        "@nomiclabs/hardhat-etherscan": "^3.0.3",
+        "@nomiclabs/hardhat-waffle": "^2.0.3",
+        "@nomiclabs/hardhat-web3": "^2.0.0",
+        "@openzeppelin/contracts": "^4.5.0",
+        "@sushiswap/core": "github:sushiswap/sushiswap",
+        "chai": "^4.3.6",
+        "dotenv": "^16.0.0",
+        "eth-crypto": "^2.2.0",
+        "ethereum-waffle": "^3.4.0",
+        "ethers": "^5.5.4",
+        "hardhat": "^2.9.0",
+        "hardhat-gas-reporter": "^1.0.8",
+        "walletlink": "^2.5.0",
+        "web3": "^1.7.1"
+    }
+}
